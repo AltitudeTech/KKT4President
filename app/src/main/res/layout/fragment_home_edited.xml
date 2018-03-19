@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nandom.kkt4president.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appBar"
+            android:layout_marginTop="56dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/mobilehome"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="-5dp"
+        android:background="@drawable/main_bg"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingRight="60dp"
+            android:paddingLeft="60dp"
+            android:paddingTop="35dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/empowerment_zone_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="3dp"
+                    app:cardBackgroundColor="@android:color/white"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="140dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp">
+
+                        <ImageView
+                            android:id="@+id/tax_image1"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="true"
+                            android:padding="8dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/empowerment_zone"/>
+
+                        <TextView
+                            android:id="@+id/tax_text1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tax_image1"
+                            android:layout_centerHorizontal="true"
+                            android:text="Empowerment Zone"
+                            android:textAlignment="center"
+                            android:textColor="@color/ash"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/you_first_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@android:color/white"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="140dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp">
+
+                        <ImageView
+                            android:id="@+id/tax_image2"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="true"
+                            android:padding="8dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/youfirst_main"/>
+
+                        <TextView
+                            android:id="@+id/tax_text2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tax_image2"
+                            android:layout_centerHorizontal="true"
+                            android:text="YOU FIRST"
+                            android:textColor="@color/ash"
+                            android:textSize="13sp"
+                            android:textStyle="bold"/>
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/ktt_tv_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="20dp"
+                    app:cardBackgroundColor="@android:color/white"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="140dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp">
+
+                        <ImageView
+                            android:id="@+id/tax_image3"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="true"
+                            android:padding="8dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/tv_main"/>
+
+                        <TextView
+                            android:id="@+id/tax_text3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tax_image3"
+                            android:layout_centerHorizontal="true"
+                            android:text="KTT Television"
+                            android:textColor="@color/ash"
+                            android:textSize="13sp"
+                            android:textStyle="bold"/>
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/gallery_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="140dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp">
+
+                        <ImageView
+                            android:id="@+id/tax_image4"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_centerHorizontal="true"
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="true"
+                            android:padding="8dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/gallery_main"/>
+
+                        <TextView
+                            android:id="@+id/tax_text4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tax_image4"
+                            android:layout_centerHorizontal="true"
+                            android:text="Gallery"
+                            android:textColor="@color/ash"
+                            android:textSize="13sp"
+                            android:textStyle="bold"/>
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

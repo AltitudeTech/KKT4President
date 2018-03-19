@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">KTT4President</string>
+    <string name="title_home">Home</string>
+    <string name="title_news">News</string>
+    <string name="title_events">Events</string>
+    <string name="title_about">About</string>
+    <string name="action_settings">License Information</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="text_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur diam id aliquam scelerisque. Donec ultrices lacus vel </string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="news_one">\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor . . .\"</string>
+    <string name="lorem_ipsum_medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. . .</string>
+    <string name="lorem_ipsum_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+
+    <string name="action_add_favourite">Add to Favourites</string>
+    <string name="action_play_next">Play Next</string>
+    <string name="backdrop_title">ENDORSEMENTS</string>
+    <string name="backdrop_subtitle">This season top 20 albums</string>
+    <string name="enodorsement_title">Endorsement</string>
+    <string name="urgent_issues_title">Urgent Issues</string>
+    <string name="first_thirty_days_title">First 30 days</string>
+    <string name="manifesto_title">Manifesto</string>
+    <string name="helpdesk_email">support@ktt4president.org</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="powered_by_altitude_technology">Powered by </string>
+</resources>

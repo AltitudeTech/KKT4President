@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context="com.example.nandom.kkt4president.fragments.QuestionFragment">
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="Are Nigerians better off today than they were three (3) years ago...?"
+        android:textSize="18sp"
+        android:fontFamily="serif"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"/>
+
+    <RadioGroup
+        android:id="@+id/rgOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tvQuestion">
+
+        <RadioButton
+            android:id="@+id/option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ash"
+            android:text="Excellently well" />
+
+        <RadioButton
+            android:id="@+id/option2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ash"
+            android:text="Good" />
+
+        <RadioButton
+            android:id="@+id/option3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ash"
+            android:text="Fair" />
+
+        <RadioButton
+            android:id="@+id/option4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ash"
+            android:text="Bad" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/etSurveyPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rgOption"
+        android:inputType="phone"
+        android:hint="Enter Phone number"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/bSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="Submit Answer"
+        android:layout_below="@+id/etSurveyPhone"/>
+
+</RelativeLayout>
