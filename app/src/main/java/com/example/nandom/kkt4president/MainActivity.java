@@ -1,9 +1,7 @@
 package com.example.nandom.kkt4president;
 
 import android.app.Dialog;
-import android.app.FragmentManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.graphics.Color;
@@ -17,7 +15,6 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -36,8 +33,7 @@ import android.widget.Toast;
 import com.example.nandom.kkt4president.fragments.AboutFragment;
 import com.example.nandom.kkt4president.fragments.EventsFragment;
 import com.example.nandom.kkt4president.fragments.HomeFragment;
-import com.example.nandom.kkt4president.fragments.NewsFragment;
-import com.example.nandom.kkt4president.fragments.LicenseDialog;
+import com.example.nandom.kkt4president.fragments.NewsMainFragment;
 
 import java.io.File;
 
@@ -46,6 +42,10 @@ public class MainActivity extends AppCompatActivity
 
     private TextView mTextMessage;
     private Button button;
+
+    private String fragmentStatus;
+    private FragmentTransaction transaction;
+    private Fragment selectedFragment = null;
 
     private BottomNavigationView bottomNavigationView;
     boolean doubleBackToExitPressedOnce = false;
@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        fragmentStatus = "home";
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -74,19 +76,23 @@ public class MainActivity extends AppCompatActivity
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedFragment = null;
+                selectedFragment = null;
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
                         selectedFragment = HomeFragment.newInstance();
+                        fragmentStatus = "home";
                         break;
                     case R.id.navigation_news:
-                        selectedFragment = NewsFragment.newInstance();
+                        selectedFragment = NewsMainFragment.newInstance();
+                        fragmentStatus = "news";
                         break;
                     case R.id.navigation_events:
                         selectedFragment = EventsFragment.newInstance();
+                        fragmentStatus = "events";
                         break;
                     case R.id.navigation_about:
                         selectedFragment = AboutFragment.newInstance();
+                        fragmentStatus = "about";
                         break;
                 }
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -96,15 +102,13 @@ public class MainActivity extends AppCompatActivity
             }
         });
         //Manually displaying the first fragment - one time only
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout, HomeFragment.newInstance());
         transaction.commit();
 
         dismiss = (Button) findViewById(R.id.dismiss);
 
     }
-
-
 
     public static void setBadgeCount(Context context, LayerDrawable icon, String count) {
 
@@ -141,21 +145,33 @@ public class MainActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
 
-            if (doubleBackToExitPressedOnce) {
-                super.onBackPressed();
-                return;
-            }
+            if (!fragmentStatus.contentEquals("home")) {
 
-            this.doubleBackToExitPressedOnce = true;
-            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+                selectedFragment = HomeFragment.newInstance();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout, selectedFragment);
+                transaction.commit();
 
-            new Handler().postDelayed(new Runnable() {
-
-                @Override
-                public void run() {
-                    doubleBackToExitPressedOnce = false;
+                if (doubleBackToExitPressedOnce) {
+                    super.onBackPressed();
+                    return;
                 }
-            }, 2000);
+
+
+
+            } else {
+
+                this.doubleBackToExitPressedOnce = true;
+                Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+                new Handler().postDelayed(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        doubleBackToExitPressedOnce = false;
+                    }
+                }, 2000);
+            }
         }
     }
 
@@ -223,9 +239,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment selectedFragment = null;
         FragmentTransaction transaction = null;
-        if (id == R.id.nav_empowerment_zone) {
-
-        } else if (id == R.id.nav_ktt_television) {
+        if (id == R.id.nav_ktt_television) {
             Intent ktttvIntent = new Intent(MainActivity.this, KTTTelevision.class);
             startActivity(ktttvIntent);
 
@@ -238,7 +252,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_news) {
             bottomNavigationView.setSelectedItemId(R.id.navigation_news);
-            selectedFragment = NewsFragment.newInstance();
+            selectedFragment = NewsMainFragment.newInstance();
             transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_layout, selectedFragment);
             transaction.commit();

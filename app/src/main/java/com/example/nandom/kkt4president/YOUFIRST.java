@@ -43,7 +43,7 @@ public class YOUFIRST extends AppCompatActivity {
 
         // Set margin for pages as a negative number, so a part of next and
         // previous pages will be showed
-        pager.setPageMargin(-250);
+        pager.setPageMargin(0);
 
     }
 }

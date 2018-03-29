@@ -136,7 +136,7 @@
                             android:layout_gravity="center_vertical"
                             android:padding="10dp"
                             android:fontFamily="@font/cabin_regular"
-                            android:text="08056544344"
+                            android:text="080XXXXXXXX"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -168,7 +168,7 @@
                             android:layout_gravity="center_vertical"
                             android:fontFamily="@font/cabin_regular"
                             android:padding="10dp"
-                            android:text="07045546719"
+                            android:text="080XXXXXXXX"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -200,7 +200,7 @@
                             android:layout_gravity="center_vertical"
                             android:fontFamily="@font/cabin_regular"
                             android:padding="10dp"
-                            android:text="09035897693"
+                            android:text="090XXXXXXXX"
                             android:textSize="16sp" />
                     </LinearLayout>
 

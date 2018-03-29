@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/cabin_regular"
                 android:layout_width="wrap_content"
+                android:textStyle="bold"
                 android:text="Business"
                 android:textColor="#3E3E3E" />
 
@@ -63,11 +64,22 @@
                 android:src="@drawable/slider_compressed"/>
 
             <TextView
-                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/cabin_regular"
-                android:text="@string/lorem_ipsum_long" />
+                android:text="@string/about_business_string" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_regular"
+                android:text="@string/about_business_string_two" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_regular"
+                android:text="@string/about_business_string_three" />
         </LinearLayout>
 
     </com.github.florent37.expansionpanel.ExpansionLayout>

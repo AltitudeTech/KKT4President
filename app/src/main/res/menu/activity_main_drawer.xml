@@ -9,10 +9,6 @@
             android:icon="@drawable/ic_home_black_24dp"
             android:title="Home" />
         <item
-            android:id="@+id/nav_empowerment_zone"
-            android:icon="@drawable/empowerment_zone"
-            android:title="Empowerment Zone" />
-        <item
             android:id="@+id/nav_ktt_television"
             android:icon="@drawable/ic_tv_black_24px"
             android:title="KTT Television" />

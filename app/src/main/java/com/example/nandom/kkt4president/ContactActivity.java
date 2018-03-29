@@ -231,9 +231,9 @@ public class ContactActivity extends AppCompatActivity implements View.OnClickLi
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(9.1425078, 7.3168307);
+        LatLng sydney = new LatLng(9.047788, 7.513183);
         float zoom = 16;
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Altitude Technology Nigeria"));
+        mMap.addMarker(new MarkerOptions().position(sydney).title("KTT Campaign HQ"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
     }

@@ -25,7 +25,7 @@ import com.example.nandom.kkt4president.YOUFIRST;
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-    private CardView kttTVCard, galleryCard, empowermentZoneCard, youFirstCard;
+    private CardView kttTVCard, galleryCard, youFirstCard;
     private Button bAbout;
     private Fragment selectedFragment = null;
     private BottomNavigationView bottomNavigationView;
@@ -44,14 +44,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         kttTVCard = (CardView) view.findViewById(R.id.ktt_tv_card);
         galleryCard = (CardView) view.findViewById(R.id.gallery_card);
-        empowermentZoneCard = (CardView) view.findViewById(R.id.empowerment_zone_card);
         youFirstCard = (CardView) view.findViewById(R.id.you_first_card);
         bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.navigation);
 
 
         kttTVCard.setOnClickListener(this);
         galleryCard.setOnClickListener(this);
-        empowermentZoneCard.setOnClickListener(this);
         youFirstCard.setOnClickListener(this);
 
         return view;
@@ -71,17 +69,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.you_first_card:
                 Intent youFirstIntent = new Intent(getContext(), YOUFIRST.class);
                 startActivity(youFirstIntent);
-                break;
-            case R.id.empowerment_zone_card:
-                Intent empowermentZoneIntent = null;
-                try {
-                    getContext().getPackageManager().getPackageInfo("com.altitude.nandom.slidingmenu", 0);
-                } catch (PackageManager.NameNotFoundException e) {
-                    e.printStackTrace();
-                }
-                empowermentZoneIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://ktt-app.herokuapp.com/"));
-                empowermentZoneIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                Toast.makeText(getContext(), "This is it", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

@@ -25,6 +25,7 @@
                 android:layout_centerVertical="true"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:textStyle="bold"
                 android:text="Public Service"
                 android:textColor="#3E3E3E" />
 
@@ -62,9 +63,46 @@
                 android:src="@drawable/slider_compressed"/>
 
             <TextView
-                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:text="@string/lorem_ipsum_long" />
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_regular"
+                android:textStyle="bold"
+                android:textColor="#555"
+                android:text="Ministerial Appointments" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_regular"
+                android:text="@string/about_public_service_string" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_regular"
+                android:textStyle="bold"
+                android:textColor="#555"
+                android:text="Security Challenges" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_regular"
+                android:text="@string/about_public_service_string_two" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_regular"
+                android:textStyle="bold"
+                android:textColor="#555"
+                android:text="Other Contributions" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_regular"
+                android:text="@string/about_public_service_string_three" />
 
         </LinearLayout>
 
