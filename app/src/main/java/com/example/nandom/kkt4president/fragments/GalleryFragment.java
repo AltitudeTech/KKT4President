@@ -35,7 +35,7 @@ import java.util.ArrayList;
 public class GalleryFragment extends Fragment {
 
     private String TAG = Gallery.class.getSimpleName();
-    private static final String endpoint = "https://api.androidhive.info/json/glide.json";
+    private static final String endpoint = "http://self-glazed-gear.000webhostapp.com/main/ktt.json";
     private ArrayList<Image> images;
     private ProgressDialog pDialog;
     private GalleryAdapter mAdapter;

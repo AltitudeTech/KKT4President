@@ -2,10 +2,14 @@
     <string name="app_name">KTT4President</string>
     <string name="title_home">Home</string>
     <string name="title_news">News</string>
-    <string name="title_events">Events</string>
+    <string name="title_gallery">Gallery</string>
     <string name="title_about">About</string>
     <string name="action_settings">License Information</string>
     <string name="title_activity_main2">Main2Activity</string>
+
+
+    <string name="hello">Policy <font fgcolor="red">World</font></string>
+
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

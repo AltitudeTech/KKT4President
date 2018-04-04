@@ -92,7 +92,7 @@
 
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/you_first_card"
+                    android:id="@+id/political_agenda"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:cardBackgroundColor="@android:color/white"
@@ -163,7 +163,7 @@
                         android:paddingRight="5dp">
 
                         <ImageView
-                            android:id="@+id/tax_image3"
+                            android:id="@+id/ktt_icon1"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_centerHorizontal="true"
@@ -174,10 +174,10 @@
                             android:src="@drawable/tv_main"/>
 
                         <TextView
-                            android:id="@+id/tax_text3"
+                            android:id="@+id/ktt_icon2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/tax_image3"
+                            android:layout_below="@+id/ktt_icon1"
                             android:layout_centerHorizontal="true"
                             android:text="KTT Television"
                             android:textColor="@color/ash"

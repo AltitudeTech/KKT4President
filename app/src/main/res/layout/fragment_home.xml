@@ -60,7 +60,7 @@
                     android:gravity="center_horizontal"
                     app:cardBackgroundColor="@android:color/white"
                     app:cardElevation="8dp"
-                    app:layout_constraintEnd_toStartOf="@+id/gallery_card"
+                    app:layout_constraintEnd_toStartOf="@+id/opinion_card"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -75,7 +75,7 @@
                         android:paddingRight="5dp">
 
                         <ImageView
-                            android:id="@+id/tax_image3"
+                            android:id="@+id/ktt_icon1"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:adjustViewBounds="true"
@@ -88,7 +88,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/tax_text3"
+                            android:id="@+id/ktt_icon2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/cabin_regular"
@@ -98,13 +98,13 @@
                             android:textStyle="bold"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tax_image3" />
+                            app:layout_constraintTop_toBottomOf="@+id/ktt_icon1" />
 
                     </android.support.constraint.ConstraintLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/gallery_card"
+                    android:id="@+id/opinion_card"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="0dp"
@@ -131,67 +131,10 @@
                         android:paddingRight="5dp">
 
                         <ImageView
-                            android:id="@+id/tax_image4"
+                            android:id="@+id/tax_image5"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_marginTop="8dp"
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="true"
-                            android:padding="8dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/gallery_main"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:id="@+id/tax_text4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/cabin_regular"
-                            android:text="Gallery"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="12sp"
-                            android:textStyle="bold"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tax_image4" />
-
-                    </android.support.constraint.ConstraintLayout>
-                </android.support.v7.widget.CardView>
-            </LinearLayout>
-                <android.support.v7.widget.CardView
-                    android:id="@+id/you_first_card"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    app:cardBackgroundColor="@android:color/white"
-                    app:cardElevation="8dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginTop="15dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.562"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/topCards"
-                    tools:layout_editor_absoluteY="24dp">
-
-                    <android.support.constraint.ConstraintLayout
-                        android:id="@+id/relativeLayout2"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_gravity="center_horizontal"
-                        android:minHeight="120dp"
-                        android:minWidth="100dp"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp">
-
-                        <ImageView
-                            android:id="@+id/tax_image2"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
                             android:adjustViewBounds="true"
                             android:cropToPadding="true"
                             android:padding="8dp"
@@ -202,20 +145,132 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/tax_text2"
+                            android:id="@+id/tax_text8"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/cabin_regular"
-                            android:text="You First"
+                            android:text="Your Opinion Matters"
+                            android:textAlignment="center"
                             android:textColor="@color/colorPrimary"
                             android:textSize="12sp"
                             android:textStyle="bold"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tax_image2" />
+                            app:layout_constraintTop_toBottomOf="@+id/tax_image5" />
 
                     </android.support.constraint.ConstraintLayout>
                 </android.support.v7.widget.CardView>
+            </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/llBottomLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.562"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/topCards"
+                    tools:layout_editor_absoluteY="24dp">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/ktt_yez_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="20dp"
+                        app:cardBackgroundColor="@android:color/white"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        app:cardElevation="8dp">
+
+                        <RelativeLayout
+                            android:layout_width="140dp"
+                            android:layout_height="120dp"
+                            android:layout_gravity="center_horizontal"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp">
+
+                            <ImageView
+                                android:id="@+id/ktt_icon3"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_centerHorizontal="true"
+                                android:adjustViewBounds="true"
+                                android:cropToPadding="true"
+                                android:padding="8dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/tv_main"
+                                app:srcCompat="@drawable/empowerment_zone" />
+
+                            <TextView
+                                android:id="@+id/ktt_text4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ktt_icon3"
+                                android:layout_centerHorizontal="true"
+                                android:text="Youth Empowerment Zone"
+                                android:textAlignment="center"
+                                android:textColor="@color/ash"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/events_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardElevation="8dp">
+
+                        <RelativeLayout
+                            android:layout_width="140dp"
+                            android:layout_height="120dp"
+                            android:layout_gravity="center_horizontal"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp">
+
+                            <ImageView
+                                android:id="@+id/tax_image4"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_centerHorizontal="true"
+                                android:adjustViewBounds="true"
+                                android:cropToPadding="true"
+                                android:padding="8dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/gallery_main"/>
+
+                            <TextView
+                                android:id="@+id/tax_text4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tax_image4"
+                                android:layout_centerHorizontal="true"
+                                android:text="Events"
+                                android:textColor="@color/ash"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+
+
+                </LinearLayout>
 
 
         </android.support.constraint.ConstraintLayout>

@@ -53,6 +53,11 @@ dependencies {
     implementation 'com.apollographql.apollo:apollo-runtime:0.4.4'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
 
+    //Spring Indicator
+    implementation 'com.github.chenupt.android:springindicator:1.0.2@aar'
+    implementation 'com.google.guava:guava:18.0'
+    implementation 'com.github.chenupt.android:multiplemodel:1.1.0@aar'
+
 //    //Volley
 //    implementation 'com.mcxiaoke.volley:library-aar:1.0.0'
 //    implementation 'com.squareup.okhttp3:okhttp:3.8.1'

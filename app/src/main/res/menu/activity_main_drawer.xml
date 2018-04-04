@@ -9,36 +9,49 @@
             android:icon="@drawable/ic_home_black_24dp"
             android:title="Home" />
         <item
-            android:id="@+id/nav_ktt_television"
-            android:icon="@drawable/ic_tv_black_24px"
-            android:title="KTT Television" />
-        <item
-            android:id="@+id/nav_news"
-            android:icon="@drawable/ic_printed"
-            android:title="News" />
-        <item
-            android:id="@+id/nav_you_first"
-            android:icon="@drawable/youfirst_main"
-            android:title="You First" />
-        <item
-            android:id="@+id/nav_upcoming_events"
-            android:icon="@drawable/ic_calendar_with_a_clock_time_tools"
-            android:title="Upcoming Events" />
-        <item
             android:id="@+id/nav_about_ktt"
             android:icon="@drawable/ic_info"
             android:title="About KTT" />
         <item
-            android:id="@+id/nav_endorsement"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Endorsements" />
+            android:id="@+id/nav_ktt_television"
+            android:icon="@drawable/ic_tv_black_24px"
+            android:title="KTT TV" />
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_printed"
+            android:title="Breaking News" />
+        <item
+            android:id="@+id/nav_you_first"
+            android:icon="@drawable/youfirst_main"
+            android:title="Political Agenda" />
+        <item
+            android:id="@+id/nav_upcoming_events"
+            android:icon="@drawable/ic_calendar_with_a_clock_time_tools"
+            android:title="Events" />
+
+        <item
+            android:id="@+id/your_opinion"
+            android:icon="@drawable/endorsement_main"
+            android:title="Your Opinion Matters" />
+
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Gallery" />
+
+        <item
+            android:id="@+id/yez"
+            android:icon="@drawable/empowerment_zone"
+            android:title="Youth Empowerment Zone" />
+
+        <!--<item-->
+        <!--android:id="@+id/nav_endorsement"-->
+        <!--android:icon="@drawable/ic_menu_manage"-->
+        <!--android:title="Endorsements" />-->
+
         <item
             android:id="@+id/nav_contact"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_contact"
             android:title="Contact" />
         <item
             android:id="@+id/nav_share"

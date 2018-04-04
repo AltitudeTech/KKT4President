@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             app:theme="@style/ToolbarColoredBackArrow"
             app:popupTheme="@style/AppTheme.NoActionBar"
-            app:title="YOU FIRST"
+            app:title="Political Agenda"
             app:titleTextColor="@android:color/white" />
     </android.support.design.widget.AppBarLayout>
 

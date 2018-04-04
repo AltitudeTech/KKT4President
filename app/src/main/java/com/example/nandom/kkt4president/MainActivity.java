@@ -1,5 +1,6 @@
 package com.example.nandom.kkt4president;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -8,9 +9,11 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -32,6 +35,8 @@ import android.widget.Toast;
 
 import com.example.nandom.kkt4president.fragments.AboutFragment;
 import com.example.nandom.kkt4president.fragments.EventsFragment;
+import com.example.nandom.kkt4president.fragments.GalleryFragment;
+import com.example.nandom.kkt4president.fragments.GalleryMainFragment;
 import com.example.nandom.kkt4president.fragments.HomeFragment;
 import com.example.nandom.kkt4president.fragments.NewsMainFragment;
 
@@ -54,6 +59,8 @@ public class MainActivity extends AppCompatActivity
     static final int CUSTOM_DIALOG_ID = 0;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,9 +93,9 @@ public class MainActivity extends AppCompatActivity
                         selectedFragment = NewsMainFragment.newInstance();
                         fragmentStatus = "news";
                         break;
-                    case R.id.navigation_events:
-                        selectedFragment = EventsFragment.newInstance();
-                        fragmentStatus = "events";
+                    case R.id.navigation_gallery:
+                        selectedFragment = GalleryMainFragment.newInstance();
+                        fragmentStatus = "gallery";
                         break;
                     case R.id.navigation_about:
                         selectedFragment = AboutFragment.newInstance();
@@ -145,32 +152,30 @@ public class MainActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
 
-            if (!fragmentStatus.contentEquals("home")) {
-
-                selectedFragment = HomeFragment.newInstance();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_layout, selectedFragment);
-                transaction.commit();
-
-                if (doubleBackToExitPressedOnce) {
-                    super.onBackPressed();
-                    return;
-                }
-
-
-
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                return;
             } else {
+                if (!fragmentStatus.contentEquals("home")) {
+                    bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+                    selectedFragment = HomeFragment.newInstance();
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.frame_layout, selectedFragment);
+                    transaction.commit();
+                    this.doubleBackToExitPressedOnce = false;
+                } else {
 
-                this.doubleBackToExitPressedOnce = true;
-                Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+                    this.doubleBackToExitPressedOnce = true;
+                    Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
 
-                new Handler().postDelayed(new Runnable() {
+                    new Handler().postDelayed(new Runnable() {
 
-                    @Override
-                    public void run() {
-                        doubleBackToExitPressedOnce = false;
-                    }
-                }, 2000);
+                        @Override
+                        public void run() {
+                            doubleBackToExitPressedOnce = false;
+                        }
+                    }, 2000);
+                }
             }
         }
     }
@@ -215,7 +220,7 @@ public class MainActivity extends AppCompatActivity
 
         String altitude = " Altitude Technology";
 
-        String title = getText(R.string.powered_by_altitude_technology) +""+ altitude;
+        String title = getText(R.string.powered_by_altitude_technology) + "" + altitude;
 
         Spannable spannable = new SpannableString(title);
 
@@ -263,12 +268,12 @@ public class MainActivity extends AppCompatActivity
             startActivity(youFirstIntent);
 
         } else if (id == R.id.nav_upcoming_events) {
-            bottomNavigationView.setSelectedItemId(R.id.navigation_events);
-            selectedFragment = EventsFragment.newInstance();
-            transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.frame_layout, selectedFragment);
-            transaction.commit();
+            Intent eventsIntent = new Intent(MainActivity.this, Events.class);
+            startActivity(eventsIntent);
 
+        } else if (id == R.id.your_opinion) {
+            Intent opinionIntent = new Intent(MainActivity.this, OnlineSurvey.class);
+            startActivity(opinionIntent);
 
         } else if (id == R.id.nav_about_ktt) {
 //            bottomNavigationView.setSelectedItemId(R.id.navigation_about);
@@ -277,15 +282,19 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.frame_layout, selectedFragment);
             transaction.commit();
 
-
-        } else if (id == R.id.nav_endorsement) {
-
-            Intent endorsements = new Intent(MainActivity.this, Endorse.class);
-            startActivity(endorsements);
-
-        } else if (id == R.id.nav_gallery) {
-            Intent galleryIntent = new Intent(MainActivity.this, Gallery.class);
-            startActivity(galleryIntent);
+        }
+//        else if (id == R.id.nav_endorsement) {
+//
+//            Intent endorsements = new Intent(MainActivity.this, Endorse.class);
+//            startActivity(endorsements);
+//
+//        }
+        else if (id == R.id.nav_gallery) {
+            bottomNavigationView.setSelectedItemId(R.id.navigation_gallery);
+            selectedFragment = GalleryMainFragment.newInstance();
+            transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame_layout, selectedFragment);
+            transaction.commit();
 
         } else if (id == R.id.nav_contact) {
             Intent contactIntent = new Intent(MainActivity.this, ContactActivity.class);

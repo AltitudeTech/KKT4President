@@ -75,10 +75,11 @@ public class NoInternet extends Fragment {
                 @Override
                 public void onClick(View view) {
                     // Refresh main activity upon close of dialog box
-                    Toast.makeText(getContext(), myValue, Toast.LENGTH_SHORT).show();
-                    Intent refresh = new Intent(getActivity(), Gallery.class);
-                    startActivity(refresh);
-                    getActivity().finish(); //
+                    GalleryMainFragment galleryFragment = new GalleryMainFragment();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.gallery_frame_layout, galleryFragment);
+                    fragmentTransaction.commit();
                 }
             });
         }else if(myValue.contentEquals("NoInternetNews")){

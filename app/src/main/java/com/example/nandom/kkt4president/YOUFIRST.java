@@ -9,7 +9,7 @@ import com.example.nandom.kkt4president.youfirstslider.MyPagerAdapter;
 
 public class YOUFIRST extends AppCompatActivity {
 
-    public final static int PAGES = 3;
+    public final static int PAGES = 9;
     // You can choose a bigger number for LOOPS, but you know, nobody will fling
     // more than 1000 times just in order to test your "infinite" ViewPager :D
     public final static int LOOPS = 1000;
@@ -39,7 +39,7 @@ public class YOUFIRST extends AppCompatActivity {
 
         // Necessary or the pager will only have one extra page to show
         // make this at least however many pages you can see
-        pager.setOffscreenPageLimit(3);
+        pager.setOffscreenPageLimit(9);
 
         // Set margin for pages as a negative number, so a part of next and
         // previous pages will be showed

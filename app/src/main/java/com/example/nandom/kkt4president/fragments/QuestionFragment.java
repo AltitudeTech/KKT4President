@@ -48,25 +48,21 @@ public class QuestionFragment extends Fragment {
 
                 selectedOption = (RadioButton) view.findViewById(selectedId);
 
-                if(rgOption.getCheckedRadioButtonId() == -1)
+                if (rgOption.getCheckedRadioButtonId() == -1)
                     Toast.makeText(getContext(), "Please select an answer from the Option", Toast.LENGTH_LONG).show();
                 else {
-
                     Toast.makeText(getContext(), selectedOption.getText().toString(), Toast.LENGTH_LONG).show();
                 }
 
-                if (phone.isEmpty()){
+                if (phone.isEmpty()) {
                     Toast.makeText(getContext(), "Please Enter phone number to Submit Polls", Toast.LENGTH_LONG).show();
                 }
-                
-                if (rgOption.getCheckedRadioButtonId() != -1 && !phone.isEmpty()){
+
+                if (rgOption.getCheckedRadioButtonId() != -1 && !phone.isEmpty()) {
                     Toast.makeText(getContext(), "Succesfully submitted Polls", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
-
-
         // Inflate the layout for this fragment
         return view;
     }
