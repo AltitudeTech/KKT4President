@@ -1,0 +1,27 @@
+query LastPolls {
+  lastPolls {
+    id
+    title
+    totalVotes
+    aVotes
+    bVotes
+    cVotes
+    dVotes
+    option1 {
+      text
+      tagLine
+    }
+    option2 {
+      text
+      tagLine
+    }
+    option3 {
+      text
+      tagLine
+    }
+    option4 {
+      text
+      tagLine
+    }
+  }
+}

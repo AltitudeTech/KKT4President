@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.Response;
@@ -32,6 +33,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class GalleryFragment extends Fragment {
 
     private String TAG = Gallery.class.getSimpleName();
@@ -40,6 +43,7 @@ public class GalleryFragment extends Fragment {
     private ProgressDialog pDialog;
     private GalleryAdapter mAdapter;
     private RecyclerView recyclerView;
+    private GifImageView loadingGif;
 
 
     public static GalleryFragment newInstance() {
@@ -61,6 +65,7 @@ public class GalleryFragment extends Fragment {
         // Inflate the layout for this fragment
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        loadingGif = (GifImageView) view.findViewById(R.id.loading_gif);
 
 
         pDialog = new ProgressDialog(getContext());
@@ -93,23 +98,22 @@ public class GalleryFragment extends Fragment {
 
         fetchImages();
 
-
-
         return view;
     }
 
     private void fetchImages() {
 
-        pDialog.setTitle("Please wait");
-        pDialog.setMessage("Loading Gallery Images...");
-        pDialog.show();
+//        pDialog.setTitle("Please wait");
+//        pDialog.setMessage("Loading Gallery Images...");
+//        pDialog.show();
 
         JsonArrayRequest req = new JsonArrayRequest(endpoint,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
                         Log.d(TAG, response.toString());
-                        pDialog.hide();
+//                        pDialog.hide();
+                        loadingGif.setVisibility(View.GONE);
 
                         images.clear();
                         for (int i = 0; i < response.length(); i++) {
@@ -137,7 +141,9 @@ public class GalleryFragment extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Error: " + error.getMessage());
-                pDialog.hide();
+                Toast.makeText(getContext(), ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+                loadingGif.setVisibility(View.GONE);
+//                pDialog.hide();
             }
         });
 

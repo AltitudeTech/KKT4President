@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.nandom.kkt4president.FirstThirtyDays;
 import com.example.nandom.kkt4president.Manifesto;
@@ -25,14 +27,14 @@ public class MyFragment extends Fragment {
     private String currentNumber, currentTitle, currentColor;
     private int currentImage;
     private Intent currentIntent;
+    private ImageView leftDirection, rightDirection;
+
 
     public static Fragment newInstance(YOUFIRST context, int pos, float scale) {
         Bundle b = new Bundle();
         b.putInt("pos", pos);
         b.putFloat("scale", scale);
         return Fragment.instantiate(context, MyFragment.class.getName(), b);
-
-
     }
 
     @Override
@@ -45,14 +47,17 @@ public class MyFragment extends Fragment {
         LinearLayout l = (LinearLayout)
                 inflater.inflate(R.layout.mf, container, false);
 
-        int pos = this.getArguments().getInt("pos");
+        final int[] pos = {this.getArguments().getInt("pos")};
         RelativeLayout rlContent = (RelativeLayout) l.findViewById(R.id.content);
         Button bView = (Button) l.findViewById(R.id.bView);
         ImageView ivYouFirst = (ImageView) l.findViewById(R.id.iv_you_first);
         TextView tvTitle = (TextView) l.findViewById(R.id.you_first_title);
         TextView tvSubtitle = (TextView) l.findViewById(R.id.you_first_subtitle);
 
-        if (pos == 0) {
+        rightDirection = (ImageView) l.findViewById(R.id.rightDirection);
+        leftDirection = (ImageView) l.findViewById(R.id.leftDirection);
+
+        if (pos[0] == 0) {
             currentNumber = "#1";
             currentTitle = "Leadership Governance & Anti-Corruption";
             currentColor = "#dc3545";
@@ -78,7 +83,23 @@ public class MyFragment extends Fragment {
                 }
             });
 
-        }else if (pos == 1) {
+//            rightDirection.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    pos[0]++;
+//                    Toast.makeText(getContext(), "Increased by " + pos[0], Toast.LENGTH_SHORT).show();
+//                }
+//            });
+//
+//            leftDirection.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    pos[0] = 9;
+//                    Toast.makeText(getContext(), "Increased by " + pos[0], Toast.LENGTH_SHORT).show();
+//                }
+//            });
+
+        } else if (pos[0] == 1) {
 
             currentNumber = "#2";
             currentTitle = "Security, Law & Order";
@@ -105,7 +126,7 @@ public class MyFragment extends Fragment {
                 }
             });
 
-        }else if (pos == 2) {
+        } else if (pos[0] == 2) {
 
             currentNumber = "#3";
             currentTitle = "Infrastructure";
@@ -131,7 +152,7 @@ public class MyFragment extends Fragment {
                     startActivity(currentIntent);
                 }
             });
-        }else if (pos == 3) {
+        } else if (pos[0] == 3) {
 
             currentNumber = "#4";
             currentTitle = "Education";
@@ -157,7 +178,7 @@ public class MyFragment extends Fragment {
                     startActivity(currentIntent);
                 }
             });
-        }else if (pos == 4) {
+        } else if (pos[0] == 4) {
 
             currentNumber = "#5";
             currentTitle = "Economy";
@@ -183,7 +204,7 @@ public class MyFragment extends Fragment {
                     startActivity(currentIntent);
                 }
             });
-        }else if (pos == 5) {
+        } else if (pos[0] == 5) {
 
             currentNumber = "#6";
             currentTitle = "Health & Wellbeing";
@@ -209,7 +230,7 @@ public class MyFragment extends Fragment {
                     startActivity(currentIntent);
                 }
             });
-        }else if (pos == 6) {
+        } else if (pos[0] == 6) {
 
             currentNumber = "#7";
             currentTitle = "Technology";
@@ -235,7 +256,7 @@ public class MyFragment extends Fragment {
                     startActivity(currentIntent);
                 }
             });
-        }else if (pos == 7) {
+        } else if (pos[0] == 7) {
 
             currentNumber = "#8";
             currentTitle = "Implementation";
@@ -261,7 +282,7 @@ public class MyFragment extends Fragment {
                     startActivity(currentIntent);
                 }
             });
-        }else if (pos == 8) {
+        } else if (pos[0] == 8) {
 
             currentNumber = "#9";
             currentTitle = "Impact Assessment & Results";

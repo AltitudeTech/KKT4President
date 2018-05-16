@@ -12,6 +12,11 @@
 
     </style>
 
+    <style name="TextAppearence.TextInputLayout.Blue" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/darker_red</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
     <style name="CabinTextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/cabin_regular</item>
     </style>

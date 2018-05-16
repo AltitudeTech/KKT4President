@@ -30,6 +30,7 @@ public class ContactActivity extends AppCompatActivity implements View.OnClickLi
     private ImageView twitter, facebook, instagram, youtube;
     private GoogleMap mMap;
     private Intent fbIntent = null;
+    private SupportMapFragment mapFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +43,8 @@ public class ContactActivity extends AppCompatActivity implements View.OnClickLi
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         //Setting up map Activity
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+        mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
 
 //        mapCardView = (CardView) findViewById(R.id.card_map_view);
         telephone1 = (LinearLayout) findViewById(R.id.llTelephone1);
@@ -76,6 +76,14 @@ public class ContactActivity extends AppCompatActivity implements View.OnClickLi
         youtube.setOnClickListener(this);
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mapFragment.getMapAsync(this);
+    }
+
+
 
     @Override
     public void onClick(View view) {

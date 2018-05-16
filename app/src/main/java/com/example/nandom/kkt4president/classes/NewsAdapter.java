@@ -2,11 +2,14 @@ package com.example.nandom.kkt4president.classes;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.nandom.kkt4president.R;
@@ -24,6 +27,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 import java.util.Collections;
 import java.util.List;
@@ -57,8 +62,19 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         // Get current position of item in recyclerview to bind data and assign values from list
         MyHolder myHolder= (MyHolder) holder;
-        News current=data.get(position);
+        final News current=data.get(position);
         myHolder.tvTitle.setText(current.getTitle());
+
+        ((MyHolder) holder).rlNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(current.getLink()));
+                context.startActivity(browserIntent);
+//                Toast.makeText(context, "Everything is alright", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 //        myHolder.textSize.setText("Size: " + current.sizeName);
 //        myHolder.textType.setText("Category: " + current.catName);
 //        myHolder.textPrice.setText("Rs. " + current.price + "\\Kg");
@@ -82,6 +98,7 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     class MyHolder extends RecyclerView.ViewHolder{
 
         TextView tvTitle;
+        RelativeLayout rlNews;
         ImageView ivFish;
         TextView textSize;
         TextView textType;
@@ -91,6 +108,7 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public MyHolder(View itemView) {
             super(itemView);
             tvTitle = (TextView) itemView.findViewById(R.id.newsTitle);
+            rlNews = (RelativeLayout) itemView.findViewById(R.id.rlnews);
 //            ivFish= (ImageView) itemView.findViewById(R.id.ivFish);
 //            textSize = (TextView) itemView.findViewById(R.id.textSize);
 //            textType = (TextView) itemView.findViewById(R.id.textType);

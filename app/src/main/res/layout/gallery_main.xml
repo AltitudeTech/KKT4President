@@ -5,13 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.nandom.kkt4president.Gallery"
-    tools:showIn="@layout/activity_gallery">
+    tools:showIn="@layout/fragment_gallery">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="vertical" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:scaleType="center"
+        android:visibility="visible"
+        android:src="@drawable/loading_ktt"
+        android:layout_centerVertical="true"
+        android:id="@+id/loading_gif" />
 
 </RelativeLayout>

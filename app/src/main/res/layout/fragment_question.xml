@@ -1,80 +1,122 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
     tools:context="com.example.nandom.kkt4president.fragments.QuestionFragment">
 
-    <RelativeLayout
+    <ScrollView
+        android:id="@+id/svLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
-    <TextView
-        android:id="@+id/tvQuestion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:text="Are Nigerians better off today than they were three (3) years ago...?"
-        android:textSize="18sp"
-        android:fontFamily="serif"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <RadioGroup
-        android:id="@+id/rgOption"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/tvQuestion">
+            <LinearLayout
+                android:id="@+id/llQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        <RadioButton
-            android:id="@+id/option1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/ash"
-            android:text="Excellently well" />
+                <TextView
+                    android:id="@+id/tvQuestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="serif"
+                    android:text="Are Nigerians better off today than they were three (3) years ago...?"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
 
-        <RadioButton
-            android:id="@+id/option2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/ash"
-            android:text="Good" />
+                <RadioGroup
+                    android:id="@+id/rgOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvQuestion"
+                    android:layout_marginTop="10dp">
 
-        <RadioButton
-            android:id="@+id/option3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/ash"
-            android:text="Fair" />
+                    <RadioButton
+                        android:id="@+id/option1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Excellently well"
+                        android:textColor="@color/ash" />
 
-        <RadioButton
-            android:id="@+id/option4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/ash"
-            android:text="Bad" />
-    </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/option2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Good"
+                        android:textColor="@color/ash" />
 
-    <EditText
-        android:id="@+id/etSurveyPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/rgOption"
-        android:inputType="phone"
-        android:hint="Enter Phone number"
-        android:layout_marginTop="16dp"/>
+                    <RadioButton
+                        android:id="@+id/option3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fair"
+                        android:textColor="@color/ash" />
 
-    <Button
-        android:id="@+id/bSubmit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="@android:color/white"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:text="Submit Answer"
-        android:layout_below="@+id/etSurveyPhone"/>
-    </RelativeLayout>
-</ScrollView>
+                    <RadioButton
+                        android:id="@+id/option4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bad"
+                        android:textColor="@color/ash" />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/surveyPhoneLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rgOption"
+                    android:focusableInTouchMode="true">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/textInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorEnabled="true"
+                        app:errorTextAppearance="@style/TextAppearence.TextInputLayout.Blue">
+
+                        <EditText
+                            android:id="@+id/etSurveyPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18dp"
+                            android:hint="Enter phone number"
+                            android:inputType="phone" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/bSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/surveyPhoneLayout"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:paddingBottom="20dp"
+                    android:paddingTop="25dp"
+                    android:text="Submit Answer"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/loadingGif"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        android:scaleType="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/loading_ktt" />
+
+</RelativeLayout>

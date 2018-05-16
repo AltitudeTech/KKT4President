@@ -127,10 +127,23 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".PoliticalAgendas"
+        <activity
+            android:name=".PoliticalAgendas"
             android:parentActivityName=".YOUFIRST"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NoInternetActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PhoneVerification"
+            android:configChanges="keyboardHidden|orientation"
+            android:parentActivityName=".OnlineSurvey"
+            android:screenOrientation="portrait" />
+        <activity android:name=".YEZWebview"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" ></activity>
     </application>
 
 </manifest>

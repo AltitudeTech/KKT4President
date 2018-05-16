@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class MyLinearLayout extends LinearLayout {
     private float scale = MyPagerAdapter.BIG_SCALE;
@@ -31,7 +32,9 @@ public class MyLinearLayout extends LinearLayout {
         int w = this.getWidth();
         int h = this.getHeight();
         canvas.scale(scale, scale, w / 2, h / 2);
+//        Toast.makeText(getContext(), "this thing is working", Toast.LENGTH_SHORT).show();
 
         super.onDraw(canvas);
     }
+
 }

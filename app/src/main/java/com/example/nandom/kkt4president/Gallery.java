@@ -43,14 +43,10 @@ public class Gallery extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
         Fragment selectedFragment = null;
         FragmentTransaction transaction = null;
 
-
         cd = new ConnectionDetector(this);
-
-
 
         if (cd.isConnected()) {
             Bundle bundle = new Bundle();

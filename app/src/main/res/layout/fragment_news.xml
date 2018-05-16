@@ -5,10 +5,28 @@
     android:layout_marginTop="56dp"
     tools:context="com.example.nandom.kkt4president.fragments.NewsFragment">
 
+
+    <RelativeLayout
+        android:id="@+id/rlNewsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
     <!-- TODO: Update blank fragment layout -->
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/event_recycler"></ListView>
+    </RelativeLayout>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/loadingNews"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:scaleType="center"
+        android:visibility="visible"
+        android:src="@drawable/loading_ktt"        />
 
 </RelativeLayout>

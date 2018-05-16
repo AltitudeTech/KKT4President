@@ -20,6 +20,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.nandom.kkt4president.R;
 import com.example.nandom.kkt4president.adapter.NewsAdapter;
 import com.example.nandom.kkt4president.app.AppController;
@@ -35,6 +37,8 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+import pl.droidsonroids.gif.GifImageView;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -48,6 +52,8 @@ public class NewsFragment extends Fragment {
     private ListView listView;
     private NewsAdapter listAdapter;
     private List<News> feedItems;
+    private GifImageView loadingNews;
+    private RelativeLayout rlNewsLayout;
 
 
     // CONNECTION_TIMEOUT and READ_TIMEOUT are in milliseconds
@@ -62,7 +68,6 @@ public class NewsFragment extends Fragment {
 
     ConnectionDetector cd;
 
-    private ProgressDialog progressDialog;
 
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
@@ -96,12 +101,8 @@ public class NewsFragment extends Fragment {
         listAdapter = new com.example.nandom.kkt4president.adapter.NewsAdapter(getActivity(), feedItems);
         listView.setAdapter(listAdapter);
 
-        progressDialog = new ProgressDialog(getContext());
-
-        progressDialog.setTitle("Please Wait");
-        progressDialog.setMessage("Loading News");
-        progressDialog.show();
-
+        loadingNews = (GifImageView) view.findViewById(R.id.loadingNews);
+        rlNewsLayout = (RelativeLayout) view.findViewById(R.id.rlNewsLayout);
 
         // We first check for cached request
         Cache cache = AppController.getInstance().getRequestQueue().getCache();
@@ -142,8 +143,6 @@ public class NewsFragment extends Fragment {
             // Adding request to volley request queue
             AppController.getInstance().addToRequestQueue(jsonReq);
         }
-
-
 
 
         //Initializing the object of the ConnectionDetection Class
@@ -227,16 +226,18 @@ public class NewsFragment extends Fragment {
 //
 //        }
 //    }
-        mRVFishPrice = (RecyclerView)view.findViewById(R.id.recycler_view);
+        mRVFishPrice = (RecyclerView) view.findViewById(R.id.recycler_view);
         return view;
     }
 
     /**
      * Parsing json reponse and passing the data to feed view list adapter
-     * */
+     */
     private void parseJsonFeed(JSONObject response) {
 
-        progressDialog.hide();
+        loadingNews.setVisibility(View.GONE);
+        rlNewsLayout.setVisibility(View.VISIBLE);
+
         try {
             JSONArray feedArray = response.getJSONArray("gistMany");
 
@@ -247,6 +248,7 @@ public class NewsFragment extends Fragment {
 //                item.setId(feedObj.getInt("_id"));
                 item.setTitle(feedObj.getString("title"));
                 item.setDate(feedObj.getString("publishedDate"));
+                item.setLink(feedObj.getString("link"));
 
 //                // Image might be null sometimes
 //                String image = feedObj.isNull("image") ? null : feedObj
